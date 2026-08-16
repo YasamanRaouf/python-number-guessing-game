@@ -54,7 +54,7 @@ A more structured implementation using the `src` pattern, with the application l
 Clone the repository:
 
 ```bash
-git clone 
+git clone https://github.com/YasamanRaouf/python-number-guessing-game.git
 cd python-number-guessing-game
 ```
 

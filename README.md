@@ -42,7 +42,7 @@ A more organized implementation using the `src` pattern, with the application di
 #### Solution B Structure
 
 ```text
-solution-b/
+solution_b/
 ├── src/
 │   ├── main.py
 │   ├── game_logic/

@@ -2,21 +2,20 @@
 
 A command-line number guessing game built with Python, featuring input validation, hints, and a scoring system.
 
-The game generates a random number within a specified range and challenges the player to guess it. After each incorrect guess, the player receives a hint indicating whether the target number is higher or lower, while the score decreases with each unsuccessful attempt.
+The game generates a random number between 1 and 100 and challenges the player to guess it. After each incorrect guess, the player receives a hint indicating whether the target number is higher or lower than the player's guess, while the score decreases with each unsuccessful attempt.
 
 ## Features
 
-* Random number generation within a specified range
+* Random number generation between 1 and 100
 * Interactive command-line gameplay
 * Input validation and error handling
 * Higher/lower hints after incorrect guesses
 * Score tracking
-* Option to quit the game
-* Two different implementations with different project structures
+* Two implementations with different approaches to project organization
 
-## Project Structure
+## Implementations
 
-This repository contains two implementations of the same game, exploring different approaches to organizing a small Python application.
+This repository contains two implementations of the same game. The first focuses on simplicity, while the second uses a more modular project structure.
 
 ### Solution A — Simple Structure
 
@@ -25,29 +24,51 @@ A straightforward implementation that keeps the project structure minimal and fo
 **Highlights:**
 
 * Simple and easy-to-follow structure
-* All core functionality in a single module
-* Suitable for a small command-line application
+* Core functionality implemented in a single module
+* Minimal setup and dependencies
 
 ### Solution B — Modular Structure
 
-A more structured implementation using the `src` pattern, with the application logic separated into different modules.
+A more organized implementation using the `src` pattern, with the application divided into separate modules based on their responsibilities.
 
 **Highlights:**
 
 * Source code organized inside the `src` directory
-* Separation of different responsibilities into modules
-* Includes project-specific documentation and dependency management
-* More scalable structure for extending the application
+* Separation of game logic and utility functions
+* Dedicated modules for number generation, hints, scoring, and input validation
+* Includes project documentation and dependency management
+* Easier to maintain and extend
+
+#### Solution B Structure
+
+```text
+solution-b/
+├── src/
+│   ├── main.py
+│   ├── game_logic/
+│   │   ├── __init__.py
+│   │   ├── number_generator.py
+│   │   ├── hint_generator.py
+│   │   └── scorer.py
+│   └── utils/
+│       ├── __init__.py
+│       └── input_validator.py
+├── README.md
+└── requirements.txt
+```
 
 ## Concepts & Skills
 
 * Functions and modular programming
+* Python modules and packages
 * Random number generation
-* User input and validation
+* User input validation
 * Exception handling
 * Conditional logic
 * Score management
+* Separation of responsibilities
 * Python project organization
+* `src`-based project structure
 
 ## Getting Started
 
@@ -58,9 +79,9 @@ git clone https://github.com/YasamanRaouf/python-number-guessing-game.git
 cd python-number-guessing-game
 ```
 
-Choose either implementation and follow its corresponding instructions.
-
 ### Solution A
+
+Run the simple implementation:
 
 ```bash
 python solution-a/number_guesser.py
@@ -68,8 +89,28 @@ python solution-a/number_guesser.py
 
 ### Solution B
 
-See the [Solution B README](./solution-b/README.md) for setup and execution instructions.
+Navigate to the Solution B directory:
+
+```bash
+cd solution-b
+```
+
+Set the Python path:
+
+```bash
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+```
+
+Run the game:
+
+```bash
+python src/main.py
+```
+
+For additional details about the modular implementation, see the [Solution B README](./solution-b/README.md).
 
 ## Project Goals
 
-This project explores how the same functionality can be implemented using different levels of code organization, from a simple single-module structure to a more modular `src`-based structure.
+This project explores two different approaches to organizing a small Python application. Solution A focuses on simplicity and direct implementation, while Solution B demonstrates a more modular structure with separation of responsibilities.
+
+Comparing the two implementations provides an opportunity to see how project structure can evolve as an application becomes more organized and maintainable.
